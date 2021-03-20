@@ -28,6 +28,8 @@
     "@nestjs/passport": "^7.1.5",
     "@nestjs/platform-express": "^7.6.13",
     "@nestjs/typeorm": "^7.1.5",
+    "@types/passport-jwt": "^3.0.5",
+    "@types/passport-local": "^1.0.33",
     "class-transformer": "^0.4.0",
     "class-validator": "^0.13.1",
     "passport": "^0.4.1",

@@ -6,7 +6,11 @@ import {
   Param,
   Delete,
   Patch,
+  UseGuards,
+  Req,
+  UnauthorizedException,
 } from '@nestjs/common';
+import { JwtAuthGuard } from 'src/guards/jwt.guard';
 import { AuthorsService } from './authors.service';
 import { CreateAuthorDto } from './dto/create-author.dto';
 import { UpdateAuthorDto } from './dto/update-author.dto';
@@ -30,11 +34,16 @@ export class AuthorsController {
     return this.authorsService.findOne(+id);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateAuthorDto: UpdateAuthorDto) {
+  async update(
+    @Param('id') id: string,
+    @Body() updateAuthorDto: UpdateAuthorDto,
+  ) {
     return this.authorsService.update(+id, updateAuthorDto);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.authorsService.remove(+id);
