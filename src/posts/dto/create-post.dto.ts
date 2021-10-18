@@ -1,4 +1,4 @@
-export class CreateBookDto {
+export class CreatePostDto {
   title: string;
   pages: number;
 }

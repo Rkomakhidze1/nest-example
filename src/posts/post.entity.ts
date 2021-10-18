@@ -3,7 +3,7 @@ import { Author } from 'src/authors/author.entity';
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Book {
+export class Post {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -13,6 +13,6 @@ export class Book {
   @Column()
   pages: number;
 
-  @ManyToOne(() => Author, (author) => author.books)
+  @ManyToOne(() => Author, (author) => author.posts)
   author: Author;
 }

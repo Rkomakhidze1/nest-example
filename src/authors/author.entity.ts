@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Book } from 'src/books/book.entity';
+import { Post } from 'src/posts/post.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -22,6 +22,6 @@ export class Author {
   @Column({ nullable: true })
   tokenId: string;
 
-  @OneToMany(() => Book, (book) => book.author)
-  books: Book[];
+  @OneToMany(() => Post, (post) => post.author)
+  posts: Post[];
 }
