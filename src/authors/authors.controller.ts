@@ -7,8 +7,6 @@ import {
   Delete,
   Patch,
   UseGuards,
-  Req,
-  UnauthorizedException,
 } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/guards/jwt.guard';
 import { AuthorsService } from './authors.service';

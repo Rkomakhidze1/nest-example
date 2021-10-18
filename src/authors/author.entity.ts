@@ -19,6 +19,9 @@ export class Author {
   @Column()
   password: string;
 
+  @Column({ nullable: true })
+  tokenId: string;
+
   @OneToMany(() => Book, (book) => book.author)
   books: Book[];
 }

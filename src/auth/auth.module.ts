@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { CacheModule, Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { AuthorsModule } from 'src/authors/authors.module';
@@ -15,6 +15,7 @@ import { AuthController } from './auth.controller';
     JwtModule.register({
       secret: jwtConstants.secret,
     }),
+    CacheModule.register(),
   ],
   controllers: [AuthController],
   providers: [AuthService, JwtStrategy, LocalStrategy],

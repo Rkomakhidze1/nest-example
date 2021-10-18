@@ -37,6 +37,10 @@ export class AuthorsService {
     return await this.authorRepository.findOne(id);
   }
 
+  async findByUsername(username: string) {
+    return this.authorRepository.findOne({ username });
+  }
+
   async remove(id: number) {
     return await this.authorRepository.delete(id);
   }
